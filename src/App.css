@@ -14,14 +14,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Blockstepped';
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
@@ -35,4 +36,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'Blockstepped';
+  src: url('./assets/fonts/Blockstepped.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MyCustomFont', sans-serif;
 }
