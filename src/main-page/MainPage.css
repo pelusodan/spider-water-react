@@ -14,7 +14,9 @@
   }
   
   .floating-image {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
     height: auto;
     animation: float 5s ease-in-out infinite;
   }
@@ -30,26 +32,15 @@
   
   .typing-text {
     font-size: 2rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Blockstepped';
     color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #333;
-    animation: typing 2s steps(30) infinite alternate;
   }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
+
   
   .location-label {
     font-size: 1rem;
     color: #666;
     margin-top: 10px;
+    font-family: 'Blockstepped';
   }
   
