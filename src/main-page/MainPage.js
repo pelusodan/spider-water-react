@@ -6,24 +6,46 @@ import Image3 from '../assets/images/emma.png';
 import Image4 from '../assets/images/chuck.png';
 import { Typewriter } from 'react-simple-typewriter';
 
-
-const images = [Image1, Image2, Image3, Image4];
+const images = [
+    { src: Image1, title: "please god dont press me please man" },
+    { src: Image2, title: "big buck hunter leaderboard boston" },
+    { src: Image3, title: "where the heck can I find a bass amp" },
+    { src: Image4, title: "how to get synth sounds off broken board" }
+  ];
 
 const MainPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Rotate images every 5 seconds
+  // Randomize images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+      setCurrentImage((prevImage) => {
+        let nextImage;
+        do {
+          nextImage = Math.floor(Math.random() * images.length);
+        } while (nextImage === prevImage); // Ensure it’s a new image
+        return nextImage;
+      });
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
+
+    // Function to handle click and navigate to the URL
+    const handleHeadingClick = () => {
+        window.location.href = 'https://www.instagram.com/spiderwaterband/';
+      };
 
   return (
     <div className="main-page">
       <div className="image-container">
-        <img src={images[currentImage]} alt="Rotating" className="floating-image" />
+      <img 
+          src={images[currentImage].src} 
+          alt="Rotating Face" 
+          title={images[currentImage].title} 
+          className="floating-image"
+          onClick={handleHeadingClick}
+        />
       </div>
       <h1 className="typing-text">
         <Typewriter
