@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Blockstepped';
 }
 
 .App-logo {
@@ -47,4 +48,39 @@
 
 body {
   font-family: 'MyCustomFont', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: transparent; /* Transparent background */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 1.5rem;
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Blockstepped', sans-serif; /* Apply Blockstepped font to nav links */
+  padding-bottom: 5px;
+}
+
+.nav-link:hover {
+  color: #ff0000; /* Bright red color on hover */
+}
+
+/* Active link underline */
+.active-nav-link {
+  border-bottom: 2px solid #000000; /* Bright red underline for active page */
 }
