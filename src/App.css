@@ -55,6 +55,7 @@ body {
   align-items: center;
   padding: 1rem;
   background-color: transparent; /* Transparent background */
+  position: relative; /* To allow positioning of the underline */
 }
 
 .navbar ul {
@@ -66,21 +67,34 @@ body {
 
 .navbar li {
   margin-right: 1.5rem;
+  position: relative; /* To allow positioning of the underline */
 }
 
 .nav-link {
   color: #000000;
   text-decoration: none;
   font-size: 1.2rem;
-  font-family: 'Blockstepped', sans-serif; /* Apply Blockstepped font to nav links */
-  padding-bottom: 5px;
+  font-family: 'Blockstepped', sans-serif;
+  padding-bottom: 1px;
+  position: relative;
+  display: inline-block;
 }
 
-.nav-link:hover {
-  color: #ff0000; /* Bright red color on hover */
+/* When a nav-link is active, apply underline */
+.nav-link.active-nav-link::after {
+  width: 100%;
 }
 
-/* Active link underline */
-.active-nav-link {
-  border-bottom: 2px solid #000000; /* Bright red underline for active page */
+/* Slide the underline when navigating */
+.navbar ul {
+  position: relative;
+}
+
+/* Indicator line for active link (positioned using JS) */
+.navbar .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: left 0.3s ease, width 0.3s ease;
 }
